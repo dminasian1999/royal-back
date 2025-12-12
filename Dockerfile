@@ -5,6 +5,6 @@ RUN mvn clean package -DskipTests
 
 # Stage 2: Create the runtime image
 FROM eclipse-temurin:17-jre-alpine
-COPY --from=builder ./target/contacts-backend-0.0.1-SNAPSHOT.jar ./contacts-backend.jar
+COPY --from=builder ./target/contacts-0.0.1-SNAPSHOT.jar ./contacts.jar
 EXPOSE 8080
-CMD ["java", "-jar", "contacts-backend.jar"]
+CMD ["java", "-jar", "contacts.jar"]
